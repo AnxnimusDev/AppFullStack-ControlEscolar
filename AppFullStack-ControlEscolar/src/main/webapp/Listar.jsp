@@ -5,6 +5,10 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="model.*"%>
+<%@page import="model.persist.*"%>
+<%@page import="java.util.*"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,14 +17,23 @@
     </head>
     <body>
         <h1>Lista Carreras</h1>
-        
         <table>
             <tr>
-                <td>Nombre Carrera</li>
-                <td><button onclick="">Borrar</button></li>
-                <td><button onlcick="">Modificar</button></li>
-                
+                <td>Nombre Carrera</td>
+                <td>Borrar</td>
+                <td>Modificar</td>
             </tr>
+            <%
+                for(Carrera carrera: ${carreras}){
+            %>
+                    <tr>
+                        <td><%= carrera.getNombre() %></td>
+                        <td><button onclick="">Borrar</button></td>
+                        <td><button onlcick="">Modificar</button></td>
+                    </tr>
+                    <%
+                }
+            %>
         </table>
     </body>
 </html>

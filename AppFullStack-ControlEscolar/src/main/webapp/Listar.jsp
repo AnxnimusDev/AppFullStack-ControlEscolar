@@ -5,6 +5,10 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="model.*"%>
+<%@ page import="java.util.List" %>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,15 +16,22 @@
         <title>Listar Carrera</title>
     </head>
     <body>
-        <h1>Lista Carreras</h1>
-        
-        <table>
-            <tr>
-                <td>Nombre Carrera</li>
-                <td><button onclick="">Borrar</button></li>
-                <td><button onlcick="">Modificar</button></li>
-                
-            </tr>
-        </table>
+        <h2>Listado de Carreras</h2>
+           <% 
+               List<Carrera> carreras = (List<Carrera>) request.getAttribute("carreras");
+               if(carreras != null && !carreras.isEmpty()) {
+           %>
+               <ul>
+                   <% for(Carrera carrera : carreras) { %>
+                       <li><%= carrera.getNombre() %></li> <!-- Asume que Carrera tiene métodos getNombre y getDescripcion -->
+                   <% } %>
+               </ul>
+           <% 
+               } else { 
+           %>
+               <p>No hay carreras disponibles para mostrar.</p>
+           <% 
+               } 
+           %>
     </body>
 </html>

@@ -12,6 +12,12 @@
         <title>Home</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Carreras</h1>
+        <ul>
+            <li><a href="Crear.jsp">Crear</a></li>
+            <li><a href="Listar.jsp">Listar</a></li>
+            <li><a href="Modificar.jsp">Modificar</a></li>
+        </ul>
+
     </body>
 </html>

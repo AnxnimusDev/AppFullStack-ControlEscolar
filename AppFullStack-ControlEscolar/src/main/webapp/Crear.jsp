@@ -12,6 +12,9 @@
         <title>Crear Carrera</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h2>Creando Carrera</h2>
+        <label for="nombre">Nombre: </label>
+        <input type="text" id="nombre" name="nombre" required/>
+        <button type="submit">Crear</button>
     </body>
 </html>

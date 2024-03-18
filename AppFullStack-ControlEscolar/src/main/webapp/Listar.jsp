@@ -12,6 +12,14 @@
         <title>Listar Carrera</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Lista Carreras</h1>
+        
+        <table>
+            <tr>
+                <td>Nombre Carrera</li>
+                <td><button onclick="">Borrar</button></li>
+                <td><button onlcick="">Modificar</button></li>
+            </tr>
+        </table>
     </body>
 </html>

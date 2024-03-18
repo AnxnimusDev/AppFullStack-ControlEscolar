@@ -9,9 +9,17 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Borrar</title>
     </head>
     <body>
         <h1>Confirmar Borrar</h1>
+        <h2>¿Estás seguro?</h2>
+        <table>
+            <tr>
+                <td><button onclick="confirmarBorrado()">Sí</button></td>
+                <td><button onclick="cancelarBorrado()">No</button></td>
+            </tr>
+        </table>
+
     </body>
 </html>

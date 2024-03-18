@@ -21,7 +21,7 @@ import java.util.logging.Logger;
  */
 public final class DbConnect {
 
-    public static final String FILE_PATH = "files/dbConnection.properties";
+    public static final String FILE_PATH = "dbConnection.properties";
     public static final String DRIVER = "com.mysql.cj.jdbc.Driver";
     public static final String PROTOCOL = "jdbc:mysql:";
     public static String HOST;
@@ -62,9 +62,9 @@ public final class DbConnect {
             conn = DriverManager.getConnection(BD_URL, USER, PASSWORD);
 
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(DbConnect.class.getName()).log(Level.SEVERE, null, ex);
+            System.err.println("NO SE ENCUENTRA EL ARCHIVO PROPERTIES!");
         } catch (IOException ex) {
-            Logger.getLogger(DbConnect.class.getName()).log(Level.SEVERE, null, ex);
+            System.err.println("ERROR DE I/O!");
         }
         return conn;
     }

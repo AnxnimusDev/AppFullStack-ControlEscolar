@@ -17,21 +17,33 @@
     </head>
     <body>
         <h2>Listado de Carreras</h2>
-           <% 
-               List<Carrera> carreras = (List<Carrera>) request.getAttribute("carreras");
-               if(carreras != null && !carreras.isEmpty()) {
-           %>
-               <ul>
-                   <% for(Carrera carrera : carreras) { %>
-                       <li><%= carrera.getNombre() %></li> <!-- Asume que Carrera tiene métodos getNombre y getDescripcion -->
-                   <% } %>
-               </ul>
-           <% 
-               } else { 
-           %>
-               <p>No hay carreras disponibles para mostrar.</p>
-           <% 
-               } 
-           %>
+        <table>
+            <tr>
+                <th colspan="2">Nombre Carrera</th>
+                <th colspan="2">Opciones</th>
+                <%
+                    List<Carrera> carreras = (List<Carrera>)request.getAttribute("carreras");
+                    for(Carrera carrera: carreras){
+                %>
+            <tr>
+                <td colspan="2"><%= carrera.getNombre()%></td>
+                <td>
+                    <form action="ModificarServlet" method="post">
+                        <input type="hidden" name="carreraId" value="<%= carrera.getId() %>">
+                        <input type="submit" value="Modificar">
+                    </form>
+                </td>
+                <td>
+                    <form action="BorrarServlet" method="post">
+                        <input type="hidden" name="carreraId" value="<%= carrera.getId() %>">
+                        <input type="submit" value="Borrar">
+                    </form>
+                </td>
+            </tr>
+                <%   
+                    }
+                %>
+            </tr>
+        </table>
     </body>
 </html>

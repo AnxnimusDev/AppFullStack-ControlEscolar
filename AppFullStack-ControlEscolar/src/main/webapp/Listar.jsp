@@ -19,6 +19,7 @@
                 <td>Nombre Carrera</li>
                 <td><button onclick="">Borrar</button></li>
                 <td><button onlcick="">Modificar</button></li>
+                
             </tr>
         </table>
     </body>

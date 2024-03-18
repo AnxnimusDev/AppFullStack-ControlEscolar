@@ -1,8 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
-   version="6.0">
+<web-app version="6.0" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
+    <servlet>
+        <servlet-name>ListarServlet</servlet-name>
+        <servlet-class>controller.ListarServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>HomeServlet</servlet-name>
+        <servlet-class>controller.HomeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CrearServlet</servlet-name>
+        <servlet-class>controller.CrearServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BorrarServlet</servlet-name>
+        <servlet-class>controller.BorrarServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ModificarServlet</servlet-name>
+        <servlet-class>controller.ModificarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListarServlet</servlet-name>
+        <url-pattern>/ListarServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HomeServlet</servlet-name>
+        <url-pattern>/HomeServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CrearServlet</servlet-name>
+        <url-pattern>/CrearServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BorrarServlet</servlet-name>
+        <url-pattern>/BorrarServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ModificarServlet</servlet-name>
+        <url-pattern>/ModificarServlet</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

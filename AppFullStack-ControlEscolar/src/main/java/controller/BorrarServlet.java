@@ -7,16 +7,14 @@ package controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author anxnimus
+ * @author Mati
  */
-@WebServlet(name = "BorrarServlet", urlPatterns = {"/borrar"})
 public class BorrarServlet extends HttpServlet {
 
     /**

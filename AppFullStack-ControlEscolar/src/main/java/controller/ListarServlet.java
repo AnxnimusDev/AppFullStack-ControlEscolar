@@ -11,9 +11,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.List;
-import model.Carrera;
-import model.Modelo;
+import java.util.*;
+import model.*;
 import model.persist.CarreraDao;
 
 /**
@@ -33,16 +32,14 @@ public class ListarServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //Usamos Modelo para acceder a las funciones del DAO de Carrera
         CarreraDao carreraDao = new CarreraDao();
-        //Listado de Carreras
         List<Carrera> carreras = carreraDao.listarCarreras();
         request.setAttribute("carreras", carreras);
-        
         response.setContentType("text/html;charset=UTF-8");
         RequestDispatcher rd = request.getRequestDispatcher("Listar.jsp");
         rd.forward(request, response);
-    }
+        }
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

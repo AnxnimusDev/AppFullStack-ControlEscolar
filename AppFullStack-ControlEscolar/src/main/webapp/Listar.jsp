@@ -6,8 +6,8 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="model.*"%>
-<%@page import="model.persist.*"%>
-<%@page import="java.util.*"%>
+<%@ page import="java.util.List" %>
+
 
 <!DOCTYPE html>
 <html>
@@ -16,24 +16,22 @@
         <title>Listar Carrera</title>
     </head>
     <body>
-        <h1>Lista Carreras</h1>
-        <table>
-            <tr>
-                <td>Nombre Carrera</td>
-                <td>Borrar</td>
-                <td>Modificar</td>
-            </tr>
-            <%
-                for(Carrera carrera: ${carreras}){
-            %>
-                    <tr>
-                        <td><%= carrera.getNombre() %></td>
-                        <td><button onclick="">Borrar</button></td>
-                        <td><button onlcick="">Modificar</button></td>
-                    </tr>
-                    <%
-                }
-            %>
-        </table>
+        <h2>Listado de Carreras</h2>
+           <% 
+               List<Carrera> carreras = (List<Carrera>) request.getAttribute("carreras");
+               if(carreras != null && !carreras.isEmpty()) {
+           %>
+               <ul>
+                   <% for(Carrera carrera : carreras) { %>
+                       <li><%= carrera.getNombre() %></li> <!-- Asume que Carrera tiene métodos getNombre y getDescripcion -->
+                   <% } %>
+               </ul>
+           <% 
+               } else { 
+           %>
+               <p>No hay carreras disponibles para mostrar.</p>
+           <% 
+               } 
+           %>
     </body>
 </html>

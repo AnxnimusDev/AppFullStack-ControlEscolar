@@ -22,12 +22,13 @@ import java.util.logging.Logger;
 public final class DbConnect {
 
     public static final String FILE_PATH = "dbConnection.properties";
+
     public static final String DRIVER = "com.mysql.cj.jdbc.Driver";
     public static final String PROTOCOL = "jdbc:mysql:";
-    public static String HOST;
-    public static String BD_NAME;
-    public static String USER;
-    public static String PASSWORD;
+    public static String HOST = "localhost";
+    public static String BD_NAME = "bd_institucion";
+    public static String USER = "root";
+    public static String PASSWORD = "adminadmin";
     public static String BD_URL;
 
     public static void loadDriver() throws ClassNotFoundException {
@@ -46,26 +47,43 @@ public final class DbConnect {
      * gets and returns a connection to database
      *
      * @return connection
-     * @throws java.sql.SQLException
+     * @throws PersistException in case of connexion error
      */
-    public Connection getConnection() throws SQLException {
+    public Connection getConnection() {
+        BD_URL = String.format("%s//%s/%s", PROTOCOL, HOST, BD_NAME);
         Connection conn = null;
         try {
-            Properties props = new Properties();
-            props.load(new FileInputStream(FILE_PATH));
-            HOST = props.getProperty("HOST");
-            BD_NAME = props.getProperty("BD_NAME");
-            USER = props.getProperty("USER");
-            PASSWORD = props.getProperty("PASSWORD");
-            BD_URL = String.format("%s//%s/%s", PROTOCOL, HOST, BD_NAME);
-
             conn = DriverManager.getConnection(BD_URL, USER, PASSWORD);
-
-        } catch (FileNotFoundException ex) {
-            System.err.println("NO SE ENCUENTRA EL ARCHIVO PROPERTIES!");
-        } catch (IOException ex) {
-            System.err.println("ERROR DE I/O!");
+        } catch (SQLException ex) {
+            Logger.getLogger(DbConnect.class.getName()).log(Level.SEVERE, null, ex);
         }
         return conn;
     }
+
+    /**
+     * gets and returns a connection to database
+     *
+     * @return connection
+     * @throws java.sql.SQLException
+     */
+//    public Connection getConnection() throws SQLException {
+//        Connection conn = null;
+//        try {
+//            Properties props = new Properties();
+//            props.load(new FileInputStream(FILE_PATH));
+//            HOST = props.getProperty("HOST");
+//            BD_NAME = props.getProperty("BD_NAME");
+//            USER = props.getProperty("USER");
+//            PASSWORD = props.getProperty("PASSWORD");
+//            BD_URL = String.format("%s//%s/%s", PROTOCOL, HOST, BD_NAME);
+//
+//            conn = DriverManager.getConnection(BD_URL, USER, PASSWORD);
+//
+//        } catch (FileNotFoundException ex) {
+//            System.err.println("NO SE ENCUENTRA EL ARCHIVO PROPERTIES!");
+//        } catch (IOException ex) {
+//            System.err.println("ERROR DE I/O!");
+//        }
+//        return conn;
+//    }
 }

@@ -14,9 +14,8 @@
     <body>
         <h1>Carreras</h1>
         <ul>
-            <li><a href="Crear.jsp">Crear</a></li>
-            <li><a href="Listar.jsp">Listar</a></li>
-            <li><a href="Modificar.jsp">Modificar</a></li>
+            <li><a href="CrearServlet">Crear Carrera</a></li>
+            <li><a href="ListarServlet">Listar todas las Carreras</a></li>
         </ul>
 
     </body>

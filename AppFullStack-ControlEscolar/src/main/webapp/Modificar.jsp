@@ -13,8 +13,24 @@
     </head>
     <body>
         <h2>Modificando Carrera</h2>
-        <label for="nombre">Nombre: </label>
+        <form action="confirmarModificar" method="post">
+            <label for="nombreAntiguo">Nombre Antiguo:</label>
+            <br>
+            <input type="text" name="nombreAntiguo" value="${nombreAntiguo}" readonly/>
+            <br>
+            <label for="nombreNuevo">Nombre Nuevo:</label>
+            <br>
+            <input type="text" name="nombreNuevo" required/>
+            <br>
+            <input type="submit" value="Modificar"/>
+        </form>
+        <!-- 
+        <label for="nombre_antiguo">Nombre Antiguo: </label>
+        <input type="text" id="nombre_antiguo" name="nombre_antiguo" value="${nombre_antiguo}"readonly/>
+        <br>
+        <label for="nombre">Nombre Nuevo: </label>
         <input type="text" id="nombre" name="nombre" required/>
-        <button type="submit">Crear</button>
+        <button type="submit">Modificar</button>
+         -->
     </body>
 </html>

@@ -4,12 +4,15 @@
  */
 package controller;
 
+import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.Carrera;
+import model.Modelo;
 
 /**
  *
@@ -29,18 +32,15 @@ public class ModificarServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ModificarServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ModificarServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        //Pillamos el ID envíado desde el ListarServlet, de la carrera a modificar
+        int carreraId = Integer.parseInt(request.getParameter("carreraId"));
+        Modelo modelo = new Modelo();
+        String nombreCarrera = modelo.buscarCarrera(new Carrera(carreraId)).getNombre();
+        //Enviamos el nombre antiguo para mostrarlo en el formulario
+        request.setAttribute("nombre_antiguo", nombreCarrera);
+        //Ahora quiero que se pille el valor del input nombre, y al darle al submit haga la operación con el modelo 
+        RequestDispatcher rd = request.getRequestDispatcher("Modificar.jsp");
+        rd.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -70,6 +70,16 @@ public class ModificarServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+//        int carreraId = Integer.parseInt(request.getParameter("carreraId"));
+//        String nuevoNombre = request.getParameter("nombre");
+//        
+//        Modelo modelo = new Modelo();
+//        //Antigua carrera
+//        Carrera oldCarrera = modelo.buscarCarrera(new Carrera(carreraId));
+//        //Modificamos la carrera
+//        modelo.modificarCarrera(oldCarrera, new Carrera(0, nuevoNombre));
+//        //Volvemos a ListarServlet
+//        response.sendRedirect("ListarServlet");
     }
 
     /**

@@ -4,12 +4,15 @@
  */
 package controller;
 
+import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.Carrera;
+import model.persist.CarreraDao;
 
 /**
  *
@@ -29,19 +32,10 @@ public class CrearServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet CrearServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet CrearServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        RequestDispatcher rd = request.getRequestDispatcher("Crear.jsp");
+        rd.forward(request, response);
         }
-    }
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -69,7 +63,26 @@ public class CrearServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String nombre = request.getParameter("nombre"); // Recoger el nombre de la carrera desde el formulario
+
+        // Crear el objeto Carrera y establecer su nombre
+        Carrera carrera = new Carrera();
+        carrera.setNombre(nombre);
+
+        // Instanciar CarreraDao y agregar la carrera a la base de datos
+        CarreraDao carreraDao = new CarreraDao();
+        int result = carreraDao.agregarCarrera(carrera);
+
+        if (result > 0) {
+            // Si la inserción es exitosa, redirigir o mostrar un mensaje de éxito
+            request.setAttribute("mensaje", "Carrera creada exitosamente");
+        } else {
+            // Si la inserción falla, mostrar un mensaje de error
+            request.setAttribute("mensaje", "Error al crear la carrera");
+        }
+
+        RequestDispatcher rd = request.getRequestDispatcher("Crear.jsp");
+        rd.forward(request, response);
     }
 
     /**

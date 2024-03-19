@@ -33,7 +33,6 @@ public final class DbConnect {
 
     public static void loadDriver() throws ClassNotFoundException {
         getConnectionProperties();
-        Class.forName(DRIVER);
         BD_URL = String.format("%s//%s/%s", PROTOCOL, HOST, BD_NAME);
     }
 
@@ -50,7 +49,7 @@ public final class DbConnect {
      * @throws PersistException in case of connexion error
      */
     public Connection getConnection() {
-        BD_URL = String.format("%s//%s/%s", PROTOCOL, HOST, BD_NAME);
+        BD_URL = String.format("%s//%s/%s%s", PROTOCOL, HOST, BD_NAME, "?autoReconnect=true&useSSL=false");
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(BD_URL, USER, PASSWORD);

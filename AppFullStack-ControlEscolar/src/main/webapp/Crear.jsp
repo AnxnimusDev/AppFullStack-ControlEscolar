@@ -12,9 +12,11 @@
         <title>Crear Carrera</title>
     </head>
     <body>
-        <h2>Creando Carrera</h2>
-        <label for="nombre">Nombre: </label>
-        <input type="text" id="nombre" name="nombre" required/>
-        <button type="submit">Crear</button>
+        <form action="CrearServlet" method="POST">
+            <h2>Creando Carrera</h2>
+            <label for="nombre">Nombre: </label>
+            <input type="text" id="nombre" name="nombre" required/>
+            <button type="submit">Crear</button>
+        </form>
     </body>
 </html>

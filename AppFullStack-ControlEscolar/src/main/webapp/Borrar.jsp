@@ -17,7 +17,7 @@
         <table>
             <tr>
                 <td><button onclick="confirmarBorrado()">Sí</button></td>
-                <td><button onclick="cancelarBorrado()">No</button></td>
+                <td><button onclick="window.location.href='ListarServlet';">No</button></td>
             </tr>
         </table>
 

@@ -83,6 +83,7 @@ public class CrearServlet extends HttpServlet {
 
         RequestDispatcher rd = request.getRequestDispatcher("Crear.jsp");
         rd.forward(request, response);
+        response.sendRedirect("ListarServlet");
     }
 
     /**

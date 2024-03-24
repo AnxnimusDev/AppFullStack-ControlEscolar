@@ -21,10 +21,10 @@
             <tr>
                 <th colspan="2">Nombre Carrera</th>
                 <th colspan="2">Opciones</th>
-                <%
-                    List<Carrera> carreras = (List<Carrera>)request.getAttribute("carreras");
-                    for(Carrera carrera: carreras){
-                %>
+                    <%
+                        List<Carrera> carreras = (List<Carrera>)request.getAttribute("carreras");
+                        for(Carrera carrera: carreras){
+                    %>
             <tr>
                 <td colspan="2"><%= carrera.getNombre()%></td>
                 <td>
@@ -40,10 +40,11 @@
                     </form>
                 </td>
             </tr>
-                <%   
-                    }
-                %>
-            </tr>
-        </table>
-    </body>
+            <%   
+                }
+            %>
+        </tr>
+    </table>
+    <input type="button" onclick="window.location.href = 'HomeServlet';" value="Cancelar"/>
+</body>
 </html>

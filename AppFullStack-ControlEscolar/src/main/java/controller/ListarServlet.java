@@ -31,12 +31,12 @@ public class ListarServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
         //Instancio el DAO de Carrera
         CarreraDao carreraDao = new CarreraDao();
         List<Carrera> carreras = carreraDao.listarCarreras();
         //Envíamos el listado de Carreras al JSP
         request.setAttribute("carreras", carreras);
-        response.setContentType("text/html;charset=UTF-8");
         RequestDispatcher rd = request.getRequestDispatcher("Listar.jsp");
         rd.forward(request, response);
     }

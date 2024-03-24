@@ -28,13 +28,13 @@
             <tr>
                 <td colspan="2"><%= carrera.getNombre()%></td>
                 <td>
-                    <form action="ModificarServlet" method="post">
+                    <form action="ModificarServlet" method="get">
                         <input type="hidden" name="carreraId" value="<%= carrera.getId() %>">
                         <input type="submit" value="Modificar">
                     </form>
                 </td>
                 <td>
-                    <form action="BorrarServlet" method="post">
+                    <form action="BorrarServlet" method="get">
                         <input type="hidden" name="carreraId" value="<%= carrera.getId() %>">
                         <input type="submit" value="Borrar">
                     </form>

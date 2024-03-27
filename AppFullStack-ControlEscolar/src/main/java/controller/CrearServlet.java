@@ -73,16 +73,13 @@ public class CrearServlet extends HttpServlet {
         CarreraDao carreraDao = new CarreraDao();
         int result = carreraDao.agregarCarrera(carrera);
 
-        if (result > 0) {
-            // Si la inserción es exitosa, redirigir o mostrar un mensaje de éxito
-            request.setAttribute("mensaje", "Carrera creada exitosamente");
-        } else {
-            // Si la inserción falla, mostrar un mensaje de error
-            request.setAttribute("mensaje", "Error al crear la carrera");
-        }
-
-        RequestDispatcher rd = request.getRequestDispatcher("Crear.jsp");
-        rd.forward(request, response);
+//        if (result > 0) {
+//            // Si la inserción es exitosa, redirigir o mostrar un mensaje de éxito
+//            request.setAttribute("mensaje", "Carrera creada exitosamente");
+//        } else {
+//            // Si la inserción falla, mostrar un mensaje de error
+//            request.setAttribute("mensaje", "Error al crear la carrera");
+//        }
         response.sendRedirect("ListarServlet");
     }
 

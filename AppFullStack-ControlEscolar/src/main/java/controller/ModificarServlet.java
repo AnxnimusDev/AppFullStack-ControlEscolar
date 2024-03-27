@@ -78,8 +78,6 @@ public class ModificarServlet extends HttpServlet {
         Carrera updCarrera = new Carrera(0, nuevoNombre);
         Carrera oldCarrera = modelo.buscarCarrera(new Carrera(carreraId));
         int result = modelo.modificarCarrera(oldCarrera, updCarrera);
-        //Verificar el resultado
-
         //Redirijir al listado de carreras.
         response.sendRedirect("ListarServlet");
     }

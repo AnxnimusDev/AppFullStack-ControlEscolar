@@ -12,11 +12,15 @@
         <title>Crear Carrera</title>
     </head>
     <body>
-        <form action="CrearServlet" method="POST">
-            <h2>Creando Carrera</h2>
-            <label for="nombre">Nombre: </label>
+        <h2>Creando Carrera</h2>
+        <form action="CrearServlet" method="post">
+            <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre" required/>
-            <button onclick="window.location.href='ListarServlet'" type="submit">Crear</button>
+            <br>
+            <input type="submit" value="Crear"/>
+            <!<!-- Añado este input para poder cancelar la operación y volver al listado de carreras -->
+            <input type="button" onclick="window.location.href = 'HomeServlet';" value="Cancelar"/>
+            <!-- <button onclick="window.location.href='ListarServlet'" type="submit">Crear</button> -->
         </form>
     </body>
 </html>

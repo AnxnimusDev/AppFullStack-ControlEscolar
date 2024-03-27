@@ -10,13 +10,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Home</title>
+        <link rel="stylesheet" href="./css/styles.css"/>
     </head>
     <body>
         <h1>Carreras</h1>
-        <ul>
-            <li><a href="CrearServlet">Crear Carrera</a></li>
-            <li><a href="ListarServlet">Listar todas las Carreras</a></li>
-        </ul>
-
+        <div class="container">
+            <ul>
+                <li><a href="CrearServlet">Crear Carrera</a></li>
+                <li><a href="ListarServlet">Listar todas las Carreras</a></li>
+            </ul> 
+        </div>
     </body>
 </html>

@@ -13,12 +13,16 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.ws.rs.GET;
 import javax.naming.ldap.Rdn;
+import model.Carrera;
+import model.Modelo;
 
 /**
  *
  * @author Mati
  */
 public class BorrarServlet extends HttpServlet {
+    
+    private int carreraId;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,8 +36,6 @@ public class BorrarServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        RequestDispatcher rd = request.getRequestDispatcher("Borrar.jsp");
-        rd.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -49,6 +51,15 @@ public class BorrarServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        //Mostramos en el input text el nombre de la carrera a borrar, a partir del id que enviamos desde listar.
+        carreraId = Integer.parseInt(request.getParameter("carreraId"));
+        Modelo modelo = new Modelo();
+        String nombreCarrera = modelo.buscarCarrera(new Carrera(carreraId)).getNombre();
+        //Enviamos el nombre antiguo para mostrarlo en el formulario
+        request.setAttribute("nombre_carrera", nombreCarrera);
+        //Mostramos el contenido de Modificar.jsp
+        RequestDispatcher rd = request.getRequestDispatcher("Borrar.jsp");
+        rd.forward(request, response);
     }
 
     /**
@@ -63,6 +74,12 @@ public class BorrarServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        //Usamos el método doPost para borrar la carrera seleccionada
+        Modelo modelo = new Modelo();
+        Carrera carrera = modelo.buscarCarrera(new Carrera(carreraId));
+        int result = modelo.eliminarCarrera(carrera);
+        //Redirijir al listado de carreras.
+        response.sendRedirect("ListarServlet");
     }
 
     /**

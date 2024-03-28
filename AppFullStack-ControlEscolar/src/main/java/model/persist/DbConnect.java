@@ -58,31 +58,4 @@ public final class DbConnect {
         }
         return conn;
     }
-
-    /**
-     * gets and returns a connection to database
-     *
-     * @return connection
-     * @throws java.sql.SQLException
-     */
-//    public Connection getConnection() throws SQLException {
-//        Connection conn = null;
-//        try {
-//            Properties props = new Properties();
-//            props.load(new FileInputStream(FILE_PATH));
-//            HOST = props.getProperty("HOST");
-//            BD_NAME = props.getProperty("BD_NAME");
-//            USER = props.getProperty("USER");
-//            PASSWORD = props.getProperty("PASSWORD");
-//            BD_URL = String.format("%s//%s/%s", PROTOCOL, HOST, BD_NAME);
-//
-//            conn = DriverManager.getConnection(BD_URL, USER, PASSWORD);
-//
-//        } catch (FileNotFoundException ex) {
-//            System.err.println("NO SE ENCUENTRA EL ARCHIVO PROPERTIES!");
-//        } catch (IOException ex) {
-//            System.err.println("ERROR DE I/O!");
-//        }
-//        return conn;
-//    }
 }

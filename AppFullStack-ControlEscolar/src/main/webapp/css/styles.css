@@ -6,10 +6,139 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     Created on : 26 mar 2024, 14:05:31
     Author     : anxnimus
 */
-.container{
-    display: grid;
+body{
+    background: linear-gradient(purple, rgb(143, 253, 255));
+    height: 100%;
+    max-height: 100%;
+    min-height: 100vh;
+}
+
+.home-body{
+
+}
+.home-title{
+    display: flex;
+    justify-content: center;
     align-items: center;
-    background-color: activeborder;
-    margin: 50px;
-    padding: 50px;
+    margin-top: 5%;
+}
+
+.home-title h1{
+    font-size: 100px;
+    text-shadow: 0px 0px blue,
+        0px 0px 12px blue,
+        0px 0px 16px blue;
+    font-family: "Rubik Scribble", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+}
+
+.home-title h2{
+    font-size: 75px;
+    text-shadow: 0px 0px green,
+        0px 0px 12px green,
+        0px 0px 16px green;
+    font-family: "Rubik Scribble", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container ul{
+    list-style: none;
+    align-content: center;
+    padding-left: 0;
+}
+
+.option{
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(aquamarine, blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    transition: transform 0.3s, filter 0.3s;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.small-option{
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(aquamarine, blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    transition: transform 0.3s, filter 0.3s;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.option a {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+.option:hover{
+    transform: scale(1.1,1.1);
+}
+
+.option:hover > .option:not(:hover){
+    filter: blur(10px);
+    transform: scale(0.9, 0.9);
+}
+
+.table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    align-content: center;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
 }

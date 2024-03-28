@@ -11,14 +11,27 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Home</title>
         <link rel="stylesheet" href="./css/styles.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik+Scribble&display=swap" rel="stylesheet">
+
     </head>
     <body>
-        <h1>Carreras</h1>
-        <div class="container">
-            <ul>
-                <li><a href="CrearServlet">Crear Carrera</a></li>
-                <li><a href="ListarServlet">Listar todas las Carreras</a></li>
-            </ul> 
+        <div class="home-body">
+            <div class="home-title">
+                <h1>Carreras</h1>
+            </div>
+            <div class="container">
+                <ul>
+                    <li class="option">
+                        <a href="CrearServlet">CREAR CARRERA</a>
+                    </li>
+                    <li class="option">
+                        <a href="ListarServlet">LISTAR TODAS LAS CARRERAS</a>
+                    </li>
+                </ul> 
+            </div>
+
         </div>
     </body>
 </html>

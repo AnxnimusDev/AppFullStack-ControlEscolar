@@ -10,19 +10,25 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Modificar Carrera</title>
+        <link rel="stylesheet" href="./css/styles.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik+Scribble&display=swap" rel="stylesheet">
     </head>
     <body>
         <h2>Modificando Carrera</h2>
-        <form action="ModificarServlet" method="post">
-            <label for="nombreAntiguo">Nombre Antiguo:</label><br>
-            <input type="text" name="nombreAntiguo" value="${nombre_antiguo}" readonly/><br>
-            
-            <label for="nombreNuevo">Nombre Nuevo:</label><br>
-            <input type="text" name="nombreNuevoInput" required/><br>
-            
-            <input type="submit" value="Modificar"/>
-            <!<!-- Añado este input para poder cancelar la operación y volver al listado de carreras -->
-            <input type="button" onclick="window.location.href = 'ListarServlet';" value="Cancelar"/>
-        </form>
+        <div class="container">
+            <form action="ModificarServlet" method="post">
+                <label for="nombreAntiguo">Nombre Antiguo:</label><br>
+                <input type="text" name="nombreAntiguo" value="${nombre_antiguo}" readonly/><br>
+
+                <label for="nombreNuevo">Nombre Nuevo:</label><br>
+                <input placeholder="Nuevo Nombre"type="text" name="nombreNuevoInput" required/><br>
+
+                <input type="submit" value="Modificar"/>
+                <!<!-- Añado este input para poder cancelar la operación y volver al listado de carreras -->
+                <input type="button" onclick="window.location.href = 'ListarServlet';" value="Cancelar"/>
+            </form>
+        </div>
     </body>
 </html>

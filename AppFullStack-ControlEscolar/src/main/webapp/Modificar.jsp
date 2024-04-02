@@ -16,8 +16,13 @@
         <link href="https://fonts.googleapis.com/css2?family=Rubik+Scribble&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h2>Modificando Carrera</h2>
-        <div class="container">
+        <div class="home-title">
+            <h2>Modificando Carrera</h2>    
+        </div>
+        <div class="table" style="display: flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;">
             <form action="ModificarServlet" method="post">
                 <label for="nombreAntiguo">Nombre Antiguo:</label><br>
                 <input type="text" name="nombreAntiguo" value="${nombre_antiguo}" readonly/><br>

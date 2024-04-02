@@ -17,7 +17,10 @@
     </head>
     <body>
         <h2>Creando Carrera</h2>
-        <div class="container">
+        <div class="table" style="display: flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;">
             <form action="CrearServlet" method="post">
                 <label for="nombre">Nombre:</label>
                 <input placeholder="Nombre de la carrera"type="text" id="nombre" name="nombre" required/>

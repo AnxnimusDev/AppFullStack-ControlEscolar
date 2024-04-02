@@ -17,7 +17,10 @@
     </head>
     <body>
         <h1>Confirmar Borrar</h1>
-        <div class="container">
+        <div class="table" style="display: flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;">
             <h2>¿Estás seguro?</h2>
             <form action="BorrarServlet" method="post">
                 <label>Se eliminará de la base de datos la siguiente carrera:</label>

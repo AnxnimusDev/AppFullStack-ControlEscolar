@@ -16,7 +16,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Rubik+Scribble&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h2>Creando Carrera</h2>
+        <div class="home-title">
+            <h2>Creando Carrera</h2>    
+        </div>
+
         <div class="table" style="display: flex;
              flex-direction: column;
              justify-content: center;

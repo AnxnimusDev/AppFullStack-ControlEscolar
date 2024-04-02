@@ -16,7 +16,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Rubik+Scribble&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>Confirmar Borrar</h1>
+        <div class="home-title">
+            <h2 >Confirmar Borrar</h2>
+        </div>
+
         <div class="table" style="display: flex;
              flex-direction: column;
              justify-content: center;

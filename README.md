@@ -1,13 +1,12 @@
 # AppFullStack-ControlEscolar
-Este proyecto es una aplicación FullStack WebApp desarrollada en Java que ofrece un sistema de gestión de carreras universitarias. La aplicación permite a los usuarios explorar una variedad de carreras universitarias, obtener información detallada sobre cada una y realizar acciones como inscribirse en cursos, obtener información sobre el plan de estudios y conocer las oportunidades profesionales asociadas.
-Características principales
+This project is a FullStack WebApp developed in Java that offers a university career management system. The application allows users to explore a variety of university careers, obtain detailed information about each one, and perform actions such as enrolling in courses, obtaining information about the curriculum, and learning about associated professional opportunities.
 
-    Listado de Carreras: Los usuarios pueden navegar a través de una amplia gama de carreras universitarias disponibles.
-    Crear Carrera: Los usuarios pueden crear carreras en la base de datos.
-    Modificar Carrera: Los usuarios pueden modificar los registros existentes de cada carreara de la base de datos.
-    Borrar Carrera: Los usuarios pueden borrar cada registro de carrera de la base de datos.
+    Carrer Listing: Users can navigate through a wide range of available university careers.
+    Create Career: Users can create careers in the database.
+    Modify Career: Users can modify existing records of each careers in the database.
+    Delete Career: Users can delete each career record from the database.
 
-Tecnologías utilizadas
+Technologies Used
 
     Backend:
         Java
@@ -19,23 +18,26 @@ Tecnologías utilizadas
         CSS
         JSP
 
-Instalación y Uso
+Installation and Usage
 
-Para ejecutar este proyecto localmente, sigue estos pasos:
+To run this project locally, follow these steps:
 
-    Clona este repositorio en tu máquina local.
-    Asegúrate de tener instalado Java y MySQL en tu sistema.
-    Configura la base de datos MySQL con los parámetros adecuados (usuario, contraseña, nombre de la base de datos).
-    Importa el proyecto en tu IDE preferido (recomendamos IntelliJ IDEA o Eclipse).
-    Ejecuta la aplicación desde tu IDE.
+    Clone this repository to your local machine.
+    Make sure you have Java and MySQL installed on your system.
+    Configure the MySQL database with the appropriate parameters (username, password, database name).
+    Import the project into your preferred IDE (we recommend IntelliJ IDEA or Eclipse).
+    Run the application from your IDE.
 
-Una vez que la aplicación esté en funcionamiento, puedes acceder a ella desde tu navegador web utilizando la dirección local proporcionada por tu IDE.
-Contribuciones
 
-Las contribuciones son bienvenidas. Si deseas contribuir a este proyecto, por favor, sigue estos pasos:
+Once the application is running, you can access it from your web browser using the local address provided by your IDE.
 
-    Haz un fork del repositorio.
-    Crea una nueva rama (git checkout -b feature/nueva-funcionalidad).
-    Realiza tus cambios y haz commit (git commit -am 'Agrega nueva funcionalidad').
-    Sube tus cambios a la rama (git push origin feature/nueva-funcionalidad).
-    Crea un nuevo Pull Request.
+Contributions
+
+Contributions are welcome. If you wish to contribute to this project, please follow these steps:
+
+    Fork the repository.
+    Create a new branch (git checkout -b feature/new-feature).
+    Make your changes and commit them (git commit -am 'Add new feature').
+    Push your changes to the branch (git push origin feature/new-feature).
+    Create a new Pull Request.
+
